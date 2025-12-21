@@ -89,3 +89,55 @@ print('*'.join('Python')) # P*y*t*h*o*n
 print('-'.join(['a','b','c'])) # a-b-c
 print('|'.join({'k1':'v1','k2':'v2','k3':'v3'})) #  k1|k2|k3
 print('|'.join({'k1':'v1','k2':'v2','k3':'v3'}.values())) #  v1|v2|v3
+
+# 4.4.3 删除字符串的指定字符
+print(' Hello,World! '.strip()) # 去除首尾空格
+print(' Hello,World! '.lstrip(' ')) # 去除头部空格
+print(' Hello,World! '.rstrip(' ')) # 去除尾部空格
+print('""""""')
+
+# 4.4.4 字符串大小写转换
+old_str = 'hello woRld!'
+upper_str = old_str.upper() # 全部转为大写
+lower_str = old_str.lower() # 全部转为小写
+capitalize_str = old_str.capitalize() # 第一个字母转为大写
+title_str = old_str.title() # 每个单词首字母大写
+print(f'upper：{upper_str}') # HELLO WORLD!
+print(f'lower：{lower_str}') # hello world!
+print(f'capitalize：{capitalize_str}') # Hello world!
+print(f'title：{title_str}') # Hello World!
+
+# 4.4.5 字符串对齐
+str = 'hello world'
+print(str.center(len(str)+10,"*")) # 居中:*****hello world*****
+print(str.ljust(len(str)+10,"-"))  # 左对齐:hello world----------
+print(str.rjust(len(str)+10,"+"))  # 右对齐:++++++++++hello world
+
+
+# 4.6 本章小结
+# 1.什么是字符串？
+#  有字母、符号和数字组成的字符序列
+# 3.字符串格式化？
+#  %、format、f-string
+# 3.字符串的常规操作？
+# 查找和替换 find、replace
+# 分割和拼接 slipt、join
+# 删除 strip、lstrip、rsrtip
+# 大小写 upper、lower、capitalize、title
+# 对齐 center、ljust、rjust
+
+# 4.7 习题
+# 1.  计算字符串中的小写字母
+str = 'snevKXNcdlNXNnLNnNLVDNLedvnL'
+lower_count = 0
+for s in str:
+    if s.islower() : lower_count+=1
+print(f'"{str}"中小写字母有{lower_count}个')
+# 2.  检查字符串中是否包含指定字符串，包含进行大小写处理
+str = 'I like to learn python.'
+specify_str = 'python'
+if str.find(specify_str) >=0 :
+    str = str.replace(specify_str,specify_str.upper())
+print(str)
+
+
